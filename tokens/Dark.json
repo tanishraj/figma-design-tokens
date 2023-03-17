@@ -5,11 +5,11 @@
   },
   "foreColor": {
     "primary": {
-      "value": "{colors.white}",
+      "value": "{colors.black}",
       "type": "color"
     },
     "secondary": {
-      "value": "{colors.blue.100}",
+      "value": "{colors.blue.900}",
       "type": "color"
     }
   }

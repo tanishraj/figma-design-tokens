@@ -1,15 +1,11 @@
 {
-  "primary": {
-    "value": "{dimension.sm}",
-    "type": "sizing"
-  },
-  "foreColor": {
+  "color": {
     "primary": {
       "value": "{colors.white}",
       "type": "color"
     },
     "secondary": {
-      "value": "{colors.blue.100}",
+      "value": "{colors.black}",
       "type": "color"
     }
   }
