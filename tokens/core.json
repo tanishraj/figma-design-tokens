@@ -577,14 +577,7 @@
   },
   "boxShadow": {
     "default": {
-      "value": {
-        "x": "{dimension.xs}",
-        "y": "{dimension.xs}",
-        "blur": "{dimension.xs}",
-        "spread": "{dimension.xs}",
-        "color": "{colors.black}",
-        "type": "dropShadow"
-      },
+      "value": "1",
       "type": "boxShadow"
     }
   },
