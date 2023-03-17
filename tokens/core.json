@@ -576,9 +576,26 @@
     }
   },
   "boxShadow": {
-    "dropShadow": {
-      "value": "1",
+    "default": {
+      "value": {
+        "x": "{dimension.xs}",
+        "y": "{dimension.xs}",
+        "blur": "{dimension.xs}",
+        "spread": "{dimension.xs}",
+        "color": "{colors.black}",
+        "type": "dropShadow"
+      },
       "type": "boxShadow"
+    }
+  },
+  "border": {
+    "default": {
+      "value": {
+        "color": "{colors.black}",
+        "width": "{dimension.scale}",
+        "style": "solid"
+      },
+      "type": "border"
     }
   }
 }
