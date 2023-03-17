@@ -575,16 +575,9 @@
       "type": "fontSizes"
     }
   },
-  "shadows": {
-    "default": {
-      "value": {
-        "x": "1",
-        "y": "1",
-        "blur": "1",
-        "spread": "1",
-        "color": "#000000",
-        "type": "innerShadow"
-      },
+  "boxShadow": {
+    "dropShadow": {
+      "value": "1",
       "type": "boxShadow"
     }
   }
