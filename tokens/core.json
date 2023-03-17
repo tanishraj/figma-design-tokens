@@ -577,18 +577,8 @@
   },
   "boxShadow": {
     "default": {
-      "value": "1",
+      "value": "1px 1px 1px 1px #000",
       "type": "boxShadow"
-    }
-  },
-  "border": {
-    "default": {
-      "value": {
-        "color": "{colors.black}",
-        "width": "{dimension.scale}",
-        "style": "solid"
-      },
-      "type": "border"
     }
   }
 }
