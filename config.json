@@ -6,15 +6,7 @@
       "buildPath": "build/",
       "files": [
         {
-          "destination": "_colors.css",
-          "format": "css/variables",
-          "filter": {
-            "type": "color"
-          }
-        },
-
-        {
-          "destination": "_styles.css",
+          "destination": "tokens.css",
           "format": "css/variables"
         }
       ]

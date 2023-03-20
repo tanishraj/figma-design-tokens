@@ -14,4 +14,4 @@ jobs:
       npm install
 
     - name: run style dictionary
-      run: npm run buildTokens
+      run: npm run build-tokens
