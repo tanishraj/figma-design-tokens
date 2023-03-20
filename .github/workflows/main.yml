@@ -24,6 +24,9 @@ jobs:
       run: npm install
       
       
+    - name: transform tokens
+      run: npm run transform
+      
     - name: run style dictionary
       run: npm run build-tokens
       
