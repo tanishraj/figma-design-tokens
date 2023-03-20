@@ -15,7 +15,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "transform": "token-transformer build --config configTransformer.js",
+    "build-tokens": "npx style-dictionary build --config config.json",
+    "buildTokens": "style-dictionary build --config build.js"
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +37,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "style-dictionary": "^3.7.2",
+    "token-transformer": "^0.0.30"
   }
 }

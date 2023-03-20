@@ -1,0 +1,14 @@
+/**
+ * Do not edit directly
+ * Generated on Mon, 20 Mar 2023 10:33:10 GMT
+ */
+
+:root {
+  --dimension-scale: 2;
+  --dimension-xs: 4;
+  --dimension-sm: 4 * 2;
+  --dimension-md: 4 * 2 * 2;
+  --dimension-lg: 4 * 2 * 2 * 2;
+  --dimension-xl: 4 * 2 * 2 * 2 * 2;
+  --card-padding: 4 * 2 * 2;
+}
