@@ -575,10 +575,13 @@
       "type": "fontSizes"
     }
   },
-  "boxShadow": {
-    "default": {
-      "value": "1px 1px 1px 1px #000",
-      "type": "boxShadow"
+  "border": {
+    "primary": {
+      "value": {
+        "borderWidth": "{dimension.xs}",
+        "borderColor": "{accent.default}"
+      },
+      "type": "composition"
     }
   }
 }

@@ -11,10 +11,6 @@
     "subtle": {
       "value": "{colors.gray.500}",
       "type": "color"
-    },
-    "naya": {
-      "value": "{colors.blue.500}",
-      "type": "color"
     }
   },
   "bg": {
@@ -28,10 +24,6 @@
     },
     "subtle": {
       "value": "{colors.gray.200}",
-      "type": "color"
-    },
-    "new": {
-      "value": "{colors.red.500}",
       "type": "color"
     }
   },
