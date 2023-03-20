@@ -1,0 +1,21 @@
+name: Parse Design Tokens
+
+on: 
+  pull_request:
+    branches:
+      - master
+      
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: install dependencies
+      run: npm install
+      
+    - name: tranform tokens
+      run: token-transformer tokens output.json --expandTypography=true --expandShadow=true --expandComposition=true --expandBorder=true --preserveRawValue=false
+      
+    - name: run style dictionary
+      run: npm run buildTokens
+  
