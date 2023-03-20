@@ -1,3 +1,5 @@
+git config user.email "tanishraj91@gmail.com"
+git config user.name "tanishraj"
 set -ex
 
 git add .
