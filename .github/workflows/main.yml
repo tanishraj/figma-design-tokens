@@ -25,7 +25,7 @@ jobs:
       
       
     - name: run style dictionary
-      run: npm run buildToken
+      run: npm run buildTokens
       
     - name: job status
       run: echo "🍏 This job's status is ${{ job.status }}."
