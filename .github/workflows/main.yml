@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: install dependecies
+      npm install
+      
     - name: tranform tokens
       run: token-transformer tokens output.json --expandTypography=true --expandShadow=true --expandComposition=true --expandBorder=true --preserveRawValue=false
 
