@@ -2,7 +2,7 @@
   "button": {
     "primary": {
       "background": {
-        "value": "{accent.default}",
+        "value": "{accent.bg}",
         "type": "color"
       },
       "text": {
