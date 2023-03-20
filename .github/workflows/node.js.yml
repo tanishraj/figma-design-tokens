@@ -32,8 +32,10 @@ jobs:
     - name: install dependencies
       run: npm install
 
-    - name: transform tokens
-      run: token-transformer tokens output.json --expandTypography=true --expandShadow=true --expandComposition=true --expandBorder=true --preserveRawValue=false
-
     - name: run style dictionary
       run: npm run buildTokens
+
+    - name: Update
+      env:
+        GITHUB_TOKEN: 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
+      run: .github/workflows/commit.sh
