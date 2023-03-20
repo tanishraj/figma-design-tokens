@@ -25,7 +25,7 @@
       "type": "borderRadius"
     },
     "background": {
-      "value": "{bg.default}",
+      "value": "{colors.orange.700}",
       "type": "color"
     },
     "padding": {
