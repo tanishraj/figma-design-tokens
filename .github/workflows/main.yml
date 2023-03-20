@@ -23,5 +23,9 @@ jobs:
     - name: install dependencies
       run: npm install
       
+      
+    - name: run style dictionary
+      run: npm run buildToken
+      
     - name: job status
       run: echo "🍏 This job's status is ${{ job.status }}."
