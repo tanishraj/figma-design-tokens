@@ -17,14 +17,11 @@ jobs:
       with:
         node-version: '14.x'
 
-    - name: Install dependencies
-      run: npm install
+    - run: npm install
 
-    - name: Run transform
-      run: npm run transform
+    - run: npm run transform
 
-    - name: Build tokens
-      run: npm run build-tokens
+    - run: npm run build-tokens
 
     - name: Commit changes
       run: |
@@ -32,18 +29,13 @@ jobs:
         git config --global user.name "tanishraj"
         git add .
         git commit -m "Design tokens changes"
-        git fetch
-        git checkout origin/master
-        git pull
-    
-    - name: Push changes
-      uses: ad-m/github-push-action@master
+        
+    - uses: ad-m/github-push-action@master
       with:
         github_token: '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'
         branch: 'master'
 
-    - name: Merge to master
-      uses: pascalgn/automerge-action@v0.13.1
+    - uses: pascalgn/automerge-action@v0.13.1
       with:
         GITHUB_TOKEN: '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'
         
