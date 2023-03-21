@@ -32,7 +32,7 @@ jobs:
         git config user.name "tanishraj"
         git add .
         git commit -m "Design tokens changes"
-        git push origin master
+        git push origin figma_branch
 
     - name: Merge to master
       uses: pascalgn/automerge-action@v0.13.1
