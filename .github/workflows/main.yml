@@ -7,12 +7,12 @@ on:
     types: [opened, synchronize]
 
 jobs:
-  Design Token Workflow:
+  Design-Token-Workflow:
     runs-on: ubuntu-latest
 
     strategy:
-    matrix:
-    node-version: [10.x]
+      matrix:
+        node-version: [10.x]
 
     steps:
     - uses: actions/checkout@v2
