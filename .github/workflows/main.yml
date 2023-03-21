@@ -32,8 +32,8 @@ jobs:
         git config --global user.name "tanishraj"
         git add .
         git commit -m "Design tokens changes"
-        git checkout master
-        git pull origin master
+        git checkout origin/master
+        git pull origin origin/master
     
     - name: Push changes
       uses: ad-m/github-push-action@master
