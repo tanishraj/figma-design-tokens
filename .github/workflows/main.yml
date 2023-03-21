@@ -29,8 +29,8 @@ jobs:
         git config --global user.name "tanishraj"
         git add .
         git commit -m "Design tokens changes"
-        git fetch
-        git pull
+        git fetch git@github.com-tanishraj:tanishraj/figma-design-tokens.git
+        git pull git@github.com-tanishraj:tanishraj/figma-design-tokens.git
         
     - uses: ad-m/github-push-action@master
       with:
