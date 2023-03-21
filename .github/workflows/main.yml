@@ -4,19 +4,15 @@ on: [pull_request]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
-    steps:
 
+    steps:
     - name: Install Node
       uses: actions/setup-node@v1
       with:
         node-version: '14.x'
-        
-    - name: install dependencies
-      run: npm install
-      
       
     - name: transform tokens
-      run: npm run transform
+      run: npm install & npm run transform
       
     - name: run style dictionary
       run: npm run build-tokens
