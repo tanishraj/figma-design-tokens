@@ -30,7 +30,7 @@ jobs:
         git add .
         git commit -m "Design tokens changes"
         git fetch origin
-        git pull origin
+        git pull origin master
         
     - uses: ad-m/github-push-action@master
       with:
