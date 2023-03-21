@@ -4,30 +4,23 @@ on:
   pull_request:
     branches: 
     - master
-    types: [opened, synchronize]
 
 jobs:
   Design-Token-Workflow:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [10.x]
-
     steps:
     - uses: actions/checkout@v2
-    - run: echo github.event.pull_request.title
 
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: '10.x'
 
     - name: Install dependencies
       run: npm install
 
     - name: Run transform
-      if: contains(github.event.pull_request.title, '[DS]')
       run: npm run transform
 
     - name: Build tokens
@@ -37,7 +30,9 @@ jobs:
       run: |
         git config user.email "tanishraj91@gmail.com"
         git config user.name "tanishraj"
-        git commit -am "Design tokens changes"
+        git add .
+        git commit -m "Design tokens changes"
+        git push origin master
 
     - name: Merge to master
       uses: pascalgn/automerge-action@v0.13.1
