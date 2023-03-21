@@ -1,46 +1,34 @@
-name: Design Token Workflow
-
-on:
-  pull_request:
-    branches: 
-    - master
-
+name: Prase Design Tokens
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [pull_request]
 jobs:
-  Design-Token-Workflow:
+  Explore-GitHub-Actions:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+    
+    - name: Reconfigure git to use HTTP authentication
+      run: >
+        git config --global url."https://github.com/".insteadOf
+        ssh://git@github.com/
 
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Install Node
       uses: actions/setup-node@v1
       with:
         node-version: '14.x'
-
-    - run: npm install
-
-    - run: npm run transform
-
-    - run: npm run build-tokens
-
-    - name: Commit changes
-      run: |
-        git config --global user.email "tanishraj91@gmail.com"
-        git config --global user.name "tanishraj"
-        git add .
-        git commit -m "Design tokens changes"
-        git fetch origin
-        git config pull.rebase true
-        git pull origin master
         
-    - uses: ad-m/github-push-action@master
-      with:
-        github_token: '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'
-        branch: 'origin/master'
-
-    - uses: pascalgn/automerge-action@v0.13.1
-      with:
-        GITHUB_TOKEN: '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'
-        
-    - name: Log
-      run: echo "Completed successfully."
+    - name: install dependencies
+      run: npm install
+      
+      
+    - name: transform tokens
+      run: npm run transform
+      
+    - name: run style dictionary
+      run: npm run build-tokens
+      
+    - name: job status
+      run: echo "🍏 This job's status is ${{ job.status }}."
