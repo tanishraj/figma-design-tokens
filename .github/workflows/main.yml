@@ -1,21 +1,45 @@
-name: Prase Design Tokens
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [pull_request]
+name: Design Token Workflow
+
+on:
+pull_request:
+branches: [master]
+types: [opened, synchronize]
+
 jobs:
-  Explore-GitHub-Actions:
+  Design Token Workflow:
     runs-on: ubuntu-latest
 
+    strategy:
+    matrix:
+    node-version: [10.x]
+
     steps:
-    - name: Install Node
+    - uses: actions/checkout@v2
+
+    - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
-        node-version: '14.x'
-      
-    - name: transform tokens
-      run: npm install & npm run transform
-      
-    - name: run style dictionary
+        node-version: ${{ matrix.node-version }}
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run transform
+      if: contains(github.event.pull_request.title, '[DS]')
+      run: npm run transform
+
+    - name: Build tokens
       run: npm run build-tokens
-      
-    - name: job status
-      run: echo "🍏 This job's status is ${{ job.status }}."
+
+    - name: Commit changes
+      run: |
+        git config user.email "tanishraj91@gmail.com"
+        git config user.name "tanishraj"
+        git commit -am "Design tokens changes"
+
+    - name: Merge to master
+      uses: pascalgn/automerge-action@v0.13.1
+      with:
+        GITHUB_TOKEN: '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'
+    - name: Log
+      run: echo "Completed successfully."
