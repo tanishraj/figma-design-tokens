@@ -29,8 +29,8 @@ jobs:
         git config --global user.name "tanishraj"
         git add .
         git commit -m "Design tokens changes"
-        git fetch master
-        git pull master
+        git fetch origin
+        git pull origin
         
     - uses: ad-m/github-push-action@master
       with:
