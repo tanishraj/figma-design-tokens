@@ -25,7 +25,6 @@ jobs:
       run: npm install
 
     - name: Run transform
-      if: contains(github.event.pull_request.title, '[DS]')
       run: npm run transform
 
     - name: Build tokens
