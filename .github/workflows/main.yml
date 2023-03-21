@@ -1,9 +1,10 @@
 name: Design Token Workflow
 
 on:
-pull_request:
-branches: [master]
-types: [opened, synchronize]
+  pull_request:
+    branches: 
+    - master
+    types: [opened, synchronize]
 
 jobs:
   Design Token Workflow:
@@ -15,6 +16,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - run: echo github.event.pull_request.title
 
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
@@ -25,6 +27,7 @@ jobs:
       run: npm install
 
     - name: Run transform
+      if: contains(github.event.pull_request.title, '[DS]')
       run: npm run transform
 
     - name: Build tokens
