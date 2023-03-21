@@ -29,13 +29,13 @@ jobs:
         git config --global user.name "tanishraj"
         git add .
         git commit -m "Design tokens changes"
-        git fetch git@github.com-tanishraj:tanishraj/figma-design-tokens.git
-        git pull git@github.com-tanishraj:tanishraj/figma-design-tokens.git
+        git fetch origin/master
+        git pull origin/master
         
     - uses: ad-m/github-push-action@master
       with:
         github_token: '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'
-        branch: HEAD
+        branch: 'origin/master'
 
     - uses: pascalgn/automerge-action@v0.13.1
       with:
